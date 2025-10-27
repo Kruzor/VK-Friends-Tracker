@@ -2,3 +2,4 @@ dotenv
 selenium
 webdriver_manager
 vk_api
+PyQt6
