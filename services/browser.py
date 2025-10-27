@@ -26,11 +26,11 @@ class BrowserManager:
         self.driver = None
 
 
-    def start_browser(self, headless:bool | None = False):
+    def start_browser(self, headless:bool | None = True):
         """
         Запускает экземпляр браузера с отдельным профилем, 
-        если указать headless True - запустится в фономов режиме,
-        по умолчанию headless - False. Возвращает driver.
+        если указать headless False - запустится обычном режиме,
+        по умолчанию headless - True. Возвращает driver.
         Если есть зависший процесс браузера с аналогичным профилем - 
         будет доталово пытаться его закрыть и запустить новый.
         Если есть уже запущенный экземпляр браузера - закроет его.
@@ -99,12 +99,10 @@ class BrowserManager:
         """
         
         data = self._get_data_from_localstorage()
-        if data:
+        if data is not None:
             token = self._parse_token(key_pattern, data)
-            log.info('Токен успешно получен')
             return token
         else:
-            log.warning('Токен не найден')
             return None
 
 
