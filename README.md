@@ -60,7 +60,7 @@
 
 ```
 USER_ID=ваш_id_вк
-REFRESH_INTERVAL=300
+REFRESH_INTERVAL=3600
 TELEGRAM_TOKEN=токен_бота
 TELEGRAM_CHAT_ID=id_чата
 ```
@@ -76,7 +76,7 @@ python __main__.py
 или скомпилированный вариант:
 
 ```bash
-static/app.exe
+app.exe
 ```
 
 После запуска:
