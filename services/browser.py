@@ -40,7 +40,7 @@ class BrowserManager:
         try:
             if self.driver:
                 self.stop_browser()
-                return self.start_browser()
+                return self.start_browser(headless=headless)
             
             log.info('Попытка запуска браузера...')
             options = Options()
@@ -63,7 +63,7 @@ class BrowserManager:
             log.error('Chrome не удалось создать сессию, пробуем закрыть зависший процесс...')
             os.system('taskkill /f /im chrome.exe')
             log.info('Повторная попытка')
-            return self.start_browser()
+            return self.start_browser(headless=headless)
 
         except Exception as e:
             log.error(f'Произошла непредвиденная ошибка: {e}')
