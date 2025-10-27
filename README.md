@@ -90,6 +90,7 @@ static/app.exe
 ## 🪶 Используемые технологии
 
 * [Python 3.11+](https://www.python.org/)
+* [PyQt6](https://pypi.org/project/PyQt6/)
 * [Selenium](https://pypi.org/project/selenium/)
 * [vk_api](https://pypi.org/project/vk-api/)
 * [webdriver_manager](https://pypi.org/project/webdriver-manager/)
