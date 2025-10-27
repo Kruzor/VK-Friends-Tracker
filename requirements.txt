@@ -1,3 +1,4 @@
 dotenv
 selenium
 webdriver_manager
+vk_api
