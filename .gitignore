@@ -1,0 +1,6 @@
+.venv/
+.vscode/
+__pycache__/
+profile_data/
+access_token.env
+friends.json
