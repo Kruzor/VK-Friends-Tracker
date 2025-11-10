@@ -59,8 +59,8 @@ class LogWindow(QMainWindow):
 
         # Меню трея
         tray_menu = QMenu()
-        open_action = QAction("Открыть     ", self)
-        exit_action = QAction("Выйти     ", self)
+        open_action = QAction("Открыть", self)
+        exit_action = QAction("Выйти", self)
         tray_menu.addAction(open_action)
         tray_menu.addAction(exit_action)
         self.tray_icon.setContextMenu(tray_menu)
@@ -103,9 +103,43 @@ class LogWindow(QMainWindow):
 
 
 def start_gui(browser_manager):
-    """Функция ля запуска GUI из main"""
-    
+    """Функция для запуска GUI из main"""
+
     app = QApplication([])
+
+    app.setStyleSheet("""
+        QMainWindow {
+            background-color: #1E1E1E;
+            border-radius: 12px;
+        }
+
+        QTextEdit {
+            background-color: #1E1E1E;
+            color: white;
+            border: 1px solid #3A3A3A;
+            border-radius: 10px;
+            padding: 8px;
+            font-family: Consolas, monospace;
+        }
+
+        QMenu {
+            background-color: #2D2D2D;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 4px;
+        }
+
+        QMenu::item {
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
+
+        QMenu::item:selected {
+            background-color: #3A3A3A;
+        }
+    """)
+
     window = LogWindow(browser_manager)
     window.show()
     return app, window
